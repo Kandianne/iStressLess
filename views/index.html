@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>My App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+<body>
+
+	<a ui-sref="Topics">Explore</a>
+	<a ui-sref="UserProfile">Your Profile</a>
+	<a ui-sref="ReliefMethods">Relief Methods</a>
+	<a ui-sref="EditUserProfile">Edit Profile</a>
+
+	<ui-view></ui-view>
+
+
+
+	<!-- Ext Libs -->
+	<script src="angular/angular.min.js"></script>
+	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="angular-bootstrap/ui-bootstrap.js"></script>
+	<script src="angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<!-- Global Src -->
+	<script src="/javascript/app.js"></script>
+	<!-- Factories -->
+	<script src="/javascript/services/UserFactory.js"></script>
+	<script src="/javascript/services/TopicsFactory.js"></script>
+	<script src="/javascript/services/ReliefMethodsFactory.js"></script>
+	<!-- Controllers -->
+	<script src="/javascript/controllers/EditUserProfileController.js"></script>
+	<script src="/javascript/controllers/ReliefMethodsController.js"></script>
+	<script src="/javascript/controllers/TopicsController.js"></script>
+	<script src="/javascript/controllers/UserController.js"></script>
+	<script src="/javascript/controllers/RegisterUserFromModalController.js"></script>
+</body>
+</html>
