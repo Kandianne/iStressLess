@@ -24,7 +24,13 @@
 			templateUrl: 'views/editUserProfile.html',
 			controller: 'EditUserProfileController',
 			controllerAs: 'vm'
+		}).state('TopicDetail', {
+			url: '/Topic/:id',
+			templateUrl: 'views/topicDetail.html',
+			controller: 'TopicsController',
+			controllerAs: 'vm'
 		});
+		
 		$urlRouterProvider.otherwise('/');
 	}
 })();

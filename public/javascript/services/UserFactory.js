@@ -13,15 +13,15 @@
 
 		function setToken(token) {
 			localStorage.setItem("token", token);
-		}
+		};
 
 		function removeToken() {
 			localStorage.removeItem("token");
-		}
+		};
 
 		function getToken() {
 			return localStorage.token;
-		}
+		};
 
 		function isLoggedIn() {
 			var token = getToken();
@@ -33,7 +33,20 @@
 			} else {
 				return false;
 			}
-		}
+		};
+
+		function urlBase64Decoder(str) {
+			var output = str.replace(/-/g, '+').replace(/_/g, '/');
+			switch(output.length % 4) {
+				case 0:{break; }
+				case 2: {output += '=='; break;}
+				case 3: {output += '='; break;}
+				default:
+				throw 'Illegal base64url string'
+			}
+			return decodeURIComponent(escape($window.atob(output)));
+		};
+
 		//---------------------LOGIN, REGISTER, LOGOUT----------------------------------------------------
 
 		o.registerUser = function(user) {
@@ -56,7 +69,26 @@
 			return q.promise;
 		};
 
-		
+		o.logoutUser = function() {
+			var q = $q.defer();
+			removeToken();
+			$rootScope._user = isLoggedIn();
+			q.resolve();
+			return q.promise;
+		};
+
+		//---------------------GETTING USER----------------------------------------------------
+
+		o.getUserLoggedIn = function (id) {
+			var q = $q.defer();
+			$http.get('/api/user/'+ id).success(function (res) {
+				q.resolve(res);
+			})
+			return q.promise;
+		};
+
+		$rootScope._user = isLoggedIn() ;
+
 		return o;
 	}
 })();

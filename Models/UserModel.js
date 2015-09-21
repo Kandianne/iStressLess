@@ -20,6 +20,7 @@ UserSchema.methods.generateJWT = function() {
 	exp.setDate(today.getDate() + 36500);
 	return jwt.sign({
 		id : this._id,
+		name: this.name,
 		username : this.username,
 		exp: exp.getTime() / 1000
 	}, "just_breathe");

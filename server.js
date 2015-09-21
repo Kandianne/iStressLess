@@ -35,6 +35,8 @@ app.use(bodyParser.json());
 
 //---------------DEFINING & REQUIRING ROUTES-------------------------
 var userRoutes = require('./routes/UserRoutes');
+var topicsRoutes = require('./routes/TopicsRoutes');
+var commentsRoutes = require('./routes/CommentsRoutes');
 
 //--------------------------------------------------------------------
 
@@ -45,6 +47,8 @@ app.get('/', function(req, res) {
 
 //-------------WHICH PATHS TO USE------------------------------
 app.use('/api/user', userRoutes);
+app.use('/api/topics', topicsRoutes);
+app.use('/api/comments', commentsRoutes);
 
 //-------------------------------------------------------------
 var server = app.listen(port, function() {

@@ -1,3 +1,108 @@
 body {
 	font-family: 'Bad Script', cursive;
 }
+
+.tranquilPic {
+	background: url("http://www.ooom.ch/wp-content/uploads/2015/06/Beach-yoga.jpg");
+	background-size: cover;
+	height: 390px;
+	box-shadow: 1px 2px 9px #777;
+}
+
+.reliefMethodsPic {
+	background: url("https://wallpaperscraft.com/image/boy_beach_sea_foam_harmony_meditation_54417_3840x2400.jpg");
+	background-size: cover;
+	height: 390px;
+	box-shadow: 1px 2px 9px #777;
+}
+
+
+.profileBack {
+	background: url("http://www.okahandja.org.na/wp-content/uploads/2015/04/clear-sky-japan.jpg");
+	background-size: cover;
+	height: 500px;
+	box-shadow: 1px 2px 9px #777;
+}
+
+.mainNav {
+	height: 160px;
+}
+
+.mainNav button {
+	background-color: white;
+	border-radius: 6px;
+	opacity: 0.7;
+	color: black;
+	font-size: 1.1em;
+}
+
+.mainNavButtons {
+	position: fixed;
+	top: 13%;
+	left: 69%;
+	z-index: 2;
+}
+
+.introFeatures {
+	padding-top: 8%;
+}
+
+.introFeatures input {
+	border: none;
+	border-bottom: solid thin #333;
+	width: 70%;
+	font-size: 1.3em;
+}
+
+::-webkit-input-placeholder {
+	color: #171717;
+}
+
+#topicsSection {
+	margin: 9% auto 6% auto;
+}
+
+.topicsMessages {
+	height: 19em;
+	padding: auto 9em;
+}
+
+.topicsMessages h3 {
+	color: #6666A0;
+}
+
+.seeMoreBtn {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 3px;
+}
+
+.editTopicBtn {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-left: 39px;
+	margin-bottom: 9px;
+}
+
+.deleteTopicBtn {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-left: 16px;
+	margin-bottom: 9px;
+}
+
+#repeatedComments li {
+	list-style: none;
+}
+
+.coloredWords {
+	color: #0000FF;
+	background-image: -webkit-linear-gradient(92deg,#0000FF,#00FF00);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 60s infinite linear;
+}
+
+

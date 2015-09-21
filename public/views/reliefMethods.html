@@ -1,3 +1,35 @@
-<div>
-	<h1>{{vm.title}}</h1>
+<div class="reliefMethodsPic">
+	<div  ng-controller="UserController as vm">
+		<div class="mainNav">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-pills navbar-right mainNavButtons">
+
+						<button ng-hide="vm.userLoggedIn" ng-click="vm.openRegisterModal()">Register</button>
+
+						<button ng-hide="vm.userLoggedIn" ng-click="vm.openLoginModal()">Login</button>
+
+						<a type="btn" ng-show="vm.userLoggedIn" ui-sref="UserProfile"><button>Profile</button></a>
+
+						<a type="btn" ui-sref="Topics"><button>Home</button></a>
+
+						<button type="btn" ng-show="vm.userLoggedIn" ng-click="vm.logoutUser()">Logout</button>
+
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row text-center">
+
+			<div class="col-md-8">
+				<h3 ng-show="vm.userLoggedIn">I am ready to stress less...</h3>
+			</div>
+
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
 </div>

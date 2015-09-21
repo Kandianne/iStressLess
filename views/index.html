@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<title>My App</title>
+	<title>I Stress Less</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body>
-
-	<a ui-sref="Topics">Explore</a>
-	<a ui-sref="UserProfile">Your Profile</a>
-	<a ui-sref="ReliefMethods">Relief Methods</a>
-	<a ui-sref="EditUserProfile">Edit Profile</a>
+	
+	
 
 	<ui-view></ui-view>
 
@@ -33,6 +32,8 @@
 	<script src="/javascript/controllers/EditUserProfileController.js"></script>
 	<script src="/javascript/controllers/ReliefMethodsController.js"></script>
 	<script src="/javascript/controllers/TopicsController.js"></script>
+	<script src="/javascript/controllers/TopicsModalController.js"></script>
+	<script src="/javascript/controllers/EditTopicModalController.js"></script>
 	<script src="/javascript/controllers/UserController.js"></script>
 	<script src="/javascript/controllers/RegisterUserFromModalController.js"></script>
 </body>

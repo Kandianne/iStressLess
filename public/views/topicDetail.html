@@ -1,0 +1,50 @@
+<div class="container navbar">
+	<a class="navbar-right" type="btn" ui-sref="Topics"><button>Home</button></a>
+</div>
+
+<div class="container-fluid">
+	<div class="row well">
+		<div class="col-md-2 text-center"></div>
+
+		<div class="col-md-8 text-center">
+			<h1>{{vm.topic.title}}</h1>
+			<p>{{vm.topic.message}}</p>
+			<i>{{vm.topic.postedBy.username}}</i>
+			<div>
+				<button ng-show="!comment" ng-click="comment = true;">Comment</button>
+				<div class="form-inline" ng-show="comment">
+					<input class="form-control" style="width: 60%" ng-model="vm.newComment" placeholder="Comment...">
+					<button class="btn btn-success" ng-click="comment = false; vm.createComment();">Submit</button>
+					<button class="btn btn-danger" ng-click="comment = false;">Cancel</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2 text-center"></div>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-3"></div>
+
+		<div class="col-md-6">
+			<ul id="repeatedComments" ng-repeat="c in vm.topic.comments track by $index | orderBy:'-created'">
+				<li class="well">
+					<h4>
+						<img src="{{c.createdBy.image}}" height="30px" width="30px" class="img img-rounded"/> &nbsp;{{c.createdBy.username}} says...
+					</h4>
+					<hr/>
+					{{c.body}}
+				</ul>
+			</div>
+
+			<div class="col-md-3"></div>
+
+
+		</div>
+
+
+	</div>
+
+</div>

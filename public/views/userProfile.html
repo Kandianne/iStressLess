@@ -1,1 +1,46 @@
-<h1>{{vm.title}}</h1>
+<div class="profileBack">
+	<div  ng-controller="UserController as vm">
+		<div class="mainNav">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-pills navbar-right mainNavButtons">
+
+						<button ng-hide="vm.userLoggedIn" ng-click="vm.openRegisterModal()">Register</button>
+
+						<button ng-hide="vm.userLoggedIn" ng-click="vm.openLoginModal()">Login</button>
+
+						<a type="btn" ng-show="vm.userLoggedIn" ui-sref="UserProfile"><button>Profile</button></a>
+
+						<a type="btn" ui-sref="Topics"><button>Home</button></a>
+
+						<button type="btn" ng-show="vm.userLoggedIn" ng-click="vm.logoutUser()">Logout</button>
+
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row text-center">
+
+			
+			
+			<div class="col-md-3">
+				<h3>{{vm.userLoggedIn.name}}</h3>
+				<img class="img  img-rounded" src="{{vm.userLoggedIn.image}}" height="190px" width="179px">
+
+				<div>
+					<br/>
+					<button ng-show="vm.userLoggedIn" ng-click="vm.logoutUser()">Logout</button>
+				</div>
+			</div>
+
+			<div class="col-md-6"><h4>{{vm.userLoggedIn.username}}</h4>
+				<p>{{vm.userLoggedIn.about}}</p></div>
+			</div>
+
+			<div class="col-md-3"></div>
+
+		</div>
+	</div>
