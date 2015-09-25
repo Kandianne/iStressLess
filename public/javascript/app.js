@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	angular.module('app', ['ui.router', 'ui.bootstrap'])
+	angular.module('app', ['ngAnimate','ui.router', 'ui.bootstrap', 'ui.bootstrap.carousel'])
 	.config(Config);
 	Config.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function Config($stateProvider, $urlRouterProvider) {
@@ -31,6 +31,8 @@
 			controllerAs: 'vm'
 		});
 		
-		$urlRouterProvider.otherwise('/');
+		// $urlRouterProvider.otherwise('/');
 	}
 })();
+
+

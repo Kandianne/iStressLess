@@ -64,6 +64,7 @@
 			$http.post('/api/user/login', user).success(function(res) {
 				setToken(res.token);
 				$rootScope._user = isLoggedIn();
+				console.log($rootScope._user);
 				q.resolve();
 			});
 			return q.promise;

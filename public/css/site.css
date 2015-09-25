@@ -2,26 +2,28 @@ body {
 	font-family: 'Bad Script', cursive;
 }
 
-.tranquilPic {
+.tranquilPic{
 	background: url("http://www.ooom.ch/wp-content/uploads/2015/06/Beach-yoga.jpg");
 	background-size: cover;
 	height: 390px;
 	box-shadow: 1px 2px 9px #777;
 }
 
-.reliefMethodsPic {
-	background: url("https://wallpaperscraft.com/image/boy_beach_sea_foam_harmony_meditation_54417_3840x2400.jpg");
+.profileBack {
+	background: url("http://www.ooom.ch/wp-content/uploads/2015/06/Beach-yoga.jpg");
 	background-size: cover;
-	height: 390px;
-	box-shadow: 1px 2px 9px #777;
+	height: 660px;
+}
+
+.reliefMethodsPic, .reliefText {
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	font-weight: bold;
 }
 
 
-.profileBack {
-	background: url("http://www.okahandja.org.na/wp-content/uploads/2015/04/clear-sky-japan.jpg");
-	background-size: cover;
-	height: 500px;
-	box-shadow: 1px 2px 9px #777;
+.carousel-control{
+	display: none;
 }
 
 .mainNav {
@@ -103,6 +105,7 @@ body {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-animation: hue 60s infinite linear;
+	text-shadow:none;
 }
 
 

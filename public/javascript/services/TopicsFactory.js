@@ -3,12 +3,12 @@
 	angular.module('app')
 	.factory('TopicsFactory', TopicsFactory);
 
-	TopicsFactory.$inject = ['$http', '$q'];
+	TopicsFactory.$inject = ['$http', '$q', "$rootScope"];
 
-	function TopicsFactory($http, $q) {
+	function TopicsFactory($http, $q, $rootScope) {
 		var o = {};
 
-		//--------------------CREATING TOPIC AND COMMENT----------------------------------------
+		//--------------------CREATING TOPIC, COMMENT, and REPLY----------------------------------------
 		o.createTopic = function(topic, id) {
 			var q = $q.defer();
 			$http.post("/api/topics/" + id, topic).success(function(res){
@@ -23,7 +23,20 @@
 				q.resolve(res);
 			});
 			return q.promise;
-		}
+		};
+
+		o.createReply = function(reply, commentId){
+			var q = $q.defer();
+			var fullReply = {
+				message: reply.body,
+				commentId: commentId.id,
+				replyCreatedBy: $rootScope._user.id
+			}
+			$http.post("/api/comments/replies", fullReply).success(function(res){
+				q.resolve(res);
+			});
+			return q.promise;
+		};
 
 		//--------------------GETTING TOPICS----------------------------------------
 		o.getTopics = function() {

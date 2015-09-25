@@ -1,3 +1,13 @@
+<div ng-controller="ImageSlideController as vm">
+	<div style="height: 90px">
+		<carousel interval="vm.myInterval" no-wrap="vm.noWrapSlides">
+			<slide ng-repeat="slide in vm.slides" active="slide.active">
+				<img ng-src="{{slide.image}}" height="60px" width="100%" style="margin:auto;">
+			</slide>
+		</carousel>
+	</div>
+</div>
+
 <div class="reliefMethodsPic">
 	<div  ng-controller="UserController as vm">
 		<div class="mainNav">
@@ -22,14 +32,32 @@
 			</div>
 		</div>
 
-		<div class="row text-center">
-
-			<div class="col-md-8">
-				<h3 ng-show="vm.userLoggedIn">I am ready to stress less...</h3>
-			</div>
-
-			<div class="col-md-4"></div>
-		</div>
-
+		
 	</div>
 </div>
+
+<div class="row text-center">
+
+	<div class="col-md-6 ">
+		<h2 class="reliefText">Stress <span class="coloredWords">Relieving</span> Links</h2>
+		<br/>
+		<p><a class="btn btn-md btn-info" href="http://www.calm.com/">Click to calm down</a></p>
+		<p><a class="btn btn-md btn-info" href="http://www.pixelthoughts.co/#">Click to shrink your problems away</a></p>
+		<p><a class="btn btn-md btn-info" href="http://rainfor.me/">Rain on you problems</a></p>
+		<p><a class="btn btn-md btn-info" href="http://www.helpguide.org/articles/stress/stress-symptoms-causes-and-effects.htm">Help Guide</a></p>
+
+		
+		
+	</div>
+
+	<div class="col-md-6 reliefText">
+		<h2>Stress <span class="coloredWords"><strong>Relieving</strong></span> Videos</h2>
+		<br/>
+		<i>Coming Soon...</i>
+		<button class="btn btn-md btn-info" ng-click="vm.getVideos()">Get Videos</button>
+
+	</div>
+
+</div>
+
+

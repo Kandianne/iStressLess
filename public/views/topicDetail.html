@@ -14,7 +14,7 @@
 				<button ng-show="!comment" ng-click="comment = true;">Comment</button>
 				<div class="form-inline" ng-show="comment">
 					<input class="form-control" style="width: 60%" ng-model="vm.newComment" placeholder="Comment...">
-					<button class="btn btn-success" ng-click="comment = false; vm.createComment();">Submit</button>
+					<button class="btn btn-success" ng-click="comment = false; vm.createComment();">Add Comment</button>
 					<button class="btn btn-danger" ng-click="comment = false;">Cancel</button>
 				</div>
 			</div>
@@ -36,15 +36,29 @@
 					</h4>
 					<hr/>
 					{{c.body}}
-				</ul>
-			</div>
+					<p style="font-family: none; font-size: .7em;"><i>{{c.created}}</i></p>
 
-			<div class="col-md-3"></div>
+					<button ng-show="!reply" class="btn btn-info" ng-click="reply = true">Reply to this</button>
+					<div class="form-inline" ng-show="reply">
+						<input class="form-control" style="width: 30%" ng-model="vm.reply" placeholder="Reply...">
+						<button class="btn btn-success" ng-click="reply = false; vm.createReply({id:c._id});">Send Reply</button>
+						<button class="btn btn-danger" ng-click="reply = false;">Cancel</button>
+					</div>
+					<ul ng-repeat="r in vm.topic.comments.replies track by $index | orderBy:'-created'">
+						<li>
+							<h5>
+								<img src="{{r.replyCreatedBy.image}}" height="20px" width="20px" class="img img-rounded"/> &nbsp;{{r.replyCreatedBy.username}} says...
+							</h5>
+							{{r.body}}
+							<i>{{r.created}}</i>
+						</li>
 
+					</ul>
+				</div>
+
+				<div class="col-md-3"></div>
+		</div>
 
 		</div>
 
-
 	</div>
-
-</div>

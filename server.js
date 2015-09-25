@@ -5,6 +5,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
 var passport = require('passport');
+// var RdioStrategy = require('passport-rdio').Strategy;
 
 //----------------REQUIRE MODELS & PASSPORT HERE-------------------------------------------
 require("./models/TopicsModel");
@@ -12,7 +13,7 @@ require("./models/CommentsModel");
 require('./models/UserModel');
 require('./config/passport');
 
-//-----------------------CONNECTIONT TO MONGOOSE--------------------------------------------------------
+//-----------------------CONNECTION TO MONGOOSE--------------------------------------------------------
 
 mongoose.connect('mongodb://localhost/iStressLess');
 
@@ -28,6 +29,9 @@ app.set('view engine', 'html');
 app.set('view options', {
 	layout: false
 });
+
+//---------------------------RDIO-----------------------------------------------------
+
 
 //middleware that allows for us to parse JSON and UTF-8 from the body of an HTTP request
 app.use(bodyParser.urlencoded({extended: true}));
