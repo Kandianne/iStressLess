@@ -15,7 +15,12 @@ require('./config/passport');
 
 //-----------------------CONNECTION TO MONGOOSE--------------------------------------------------------
 
-mongoose.connect('mongodb://kandianne:koderkamps7@ds029224.mongolab.com:29224/heroku_5v6c3f26');
+mongoose.connect('mongodb://kandianne:koderkamps7@ds029224.mongolab.com:29224/heroku_5v6c3f26', function(err) {
+	if(err) return console.log("No connection");
+	else{
+		console.log("Success")
+	}
+});
 
 //-----------------------------------------------------------------------------------------
 app.set('views', path.join(__dirname, 'views'));
