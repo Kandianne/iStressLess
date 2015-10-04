@@ -15,7 +15,7 @@ require('./config/passport');
 
 //-----------------------CONNECTION TO MONGOOSE--------------------------------------------------------
 
-mongoose.connect('mongodb://localhost/iStressLess');
+mongoose.connect('mongodb://kandianne:koderkamps7@ds029224.mongolab.com:29224/heroku_5v6c3f26');
 
 //-----------------------------------------------------------------------------------------
 app.set('views', path.join(__dirname, 'views'));
