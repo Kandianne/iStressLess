@@ -6,27 +6,27 @@
 	function Config($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('Topics',{
 			url: '/',
-			templateUrl: 'views/topics.html',
+			templateUrl: 'templates/topics.html',
 			controller: 'TopicsController',
 			controllerAs: 'vm'
 		}).state('ReliefMethods',{
 			url: '/ReliefMethods',
-			templateUrl: 'views/reliefMethods.html',
+			templateUrl: 'templates/reliefMethods.html',
 			controller: 'ReliefMethodsController',
 			controllerAs: 'vm'
 		}).state('UserProfile',{
 			url: '/UserProfile',
-			templateUrl: 'views/userProfile.html',
+			templateUrl: 'templates/userProfile.html',
 			controller: 'UserController',
 			controllerAs: 'vm'
 		}).state('EditUserProfile',{
 			url: '/EditUserProfile',
-			templateUrl: 'views/editUserProfile.html',
+			templateUrl: 'templates/editUserProfile.html',
 			controller: 'EditUserProfileController',
 			controllerAs: 'vm'
 		}).state('TopicDetail', {
 			url: '/Topic/:id',
-			templateUrl: 'views/topicDetail.html',
+			templateUrl: 'templates/topicDetail.html',
 			controller: 'TopicsController',
 			controllerAs: 'vm'
 		});
