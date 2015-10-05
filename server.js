@@ -8,9 +8,9 @@ var passport = require('passport');
 // var RdioStrategy = require('passport-rdio').Strategy;
 
 //----------------REQUIRE MODELS & PASSPORT HERE-------------------------------------------
-require("./models/TopicsModel");
-require("./models/CommentsModel");
-require('./models/UserModel');
+require("./Models/TopicsModel");
+require("./Models/CommentsModel");
+require('./Models/UserModel');
 require('./config/passport');
 
 //-----------------------CONNECTION TO MONGOOSE--------------------------------------------------------
