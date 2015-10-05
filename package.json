@@ -4,7 +4,7 @@
   "description": "An application for the Coder Camps FullStack JS course",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
     },
     "license": "MIT",
     "dependencies": {
