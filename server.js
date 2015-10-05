@@ -43,9 +43,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //---------------DEFINING & REQUIRING ROUTES-------------------------
-var userRoutes = require('./routes/UserRoutes');
-var topicsRoutes = require('./routes/TopicsRoutes');
-var commentsRoutes = require('./routes/CommentsRoutes');
+var userRoutes = require('./Routes/UserRoutes');
+var topicsRoutes = require('./Routes/TopicsRoutes');
+var commentsRoutes = require('./Routes/CommentsRoutes');
 
 //--------------------------------------------------------------------
 
