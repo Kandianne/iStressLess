@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var passport = require('passport'); //Multiple ways of bringing authentication from different providers. such as fb, local, google, twitch
+var cloudinary = require('cloudinary');
 
 //REQUIRED FOR GETTING ONE USER-------------------------------------------------------
 
