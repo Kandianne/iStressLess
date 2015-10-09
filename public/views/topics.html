@@ -1,0 +1,91 @@
+
+<div class="tranquilPic">
+	<div  ng-controller="UserController as vm">
+		<div class="mainNav">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-pills navbar-right mainNavButtons">
+
+						<button ng-hide="vm.userLoggedIn" ng-click="vm.openRegisterModal()">Register</button>
+
+						<button ng-hide="vm.userLoggedIn" ng-click="vm.openLoginModal()">Login</button>
+
+						<a type="btn" ng-show="vm.userLoggedIn" ui-sref="UserProfile"><button>Profile</button></a>
+
+						<a type="btn" ui-sref="Topics"><button>Home</button></a>
+
+						<button type="btn" ng-show="vm.userLoggedIn" ng-click="vm.logoutUser()">Logout</button>
+
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row text-center">
+
+			<div class="col-md-8">
+				<h3 ng-show="vm.userLoggedIn">I am {{vm.userLoggedIn.name}} and...</h3>
+				<h1>I Stress Less</h1>
+			</div>
+
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
+</div>
+
+
+<div class="row text-center introFeatures">
+
+	<div class="col-md-4">
+		<a ui-sref="ReliefMethods"><input type="text" placeholder="Checkout ways to relieve stress..." /></a>
+	</div>
+
+	<div class="col-md-4">
+		<input ng-click="vm.openCreateTopicModal({id:_user.id})" placeholder="Tell us what is stressing you..." />
+	</div>
+
+	<div class="col-md-4">
+		<!-- <a ng-click="vm.gotoElement('scrollto')">Scrollto</a> --><a href="/#/#scrollto"><input placeholder="Explore stress less discussions..." />
+	</a>
+</div>
+</div>
+
+<div class="row text-center" id="topicsFeed">
+
+	<div id="topicsSection" class="introFeatures">
+		<h1>Explore <span id="scrollto" class="coloredWords">Stress Less</span> Discussions</h1>
+		<br/>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"><input class="text-center" ng-model="search.message" placeholder="Search Topics..." /></div>
+			<div class="col-md-4"></div>
+
+		</div>
+
+	</div>
+	<div class="col-md-3 well topicsMessages" ng-repeat="t in vm.topics | orderBy:'-created' | filter:search ">
+
+		<h3 class="text-center">{{t.title}}</h3>
+		<p class="text-left">{{t.message}}</p>
+		<i>By: {{t.postedBy.username}}</i>
+
+		<a ng-click="vm.deleteTopic(t)" ng-show="t.postedBy.username == _user.username" class="deleteTopicBtn">
+			<button class="btn btn-sm"><i class="fa fa-trash-o"></i></button>
+		</a>
+
+		<a ng-click="vm.openEditTopicModal(t)" ng-show="t.postedBy.username == _user.username" class="editTopicBtn">
+			<button class="btn btn-sm"><i class="fa fa-pencil-square-o"></i></button>
+		</a>
+
+		<a ui-sref="TopicDetail({id:t._id})" class="btn btn-sm seeMoreBtn"><button class="btn btn-sm">See More</button></a>
+		<br/>
+	</div>
+
+</div>
+
+
+
+
