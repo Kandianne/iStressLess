@@ -4,7 +4,7 @@
   "description": "An application for the Coder Camps FullStack JS course",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
     },
     "license": "MIT",
     "dependencies": {
@@ -16,7 +16,8 @@
       "jsonwebtoken": "^5.0.5",
       "mongoose": "^4.1.7",
       "passport": "^0.3.0",
-      "passport-local": "^1.0.0"
+      "passport-local": "^1.0.0",
+      "cool-ascii-faces": "~1.3.x"
       },
       "engines": {
         "node": "0.12.7"
