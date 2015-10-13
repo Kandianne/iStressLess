@@ -16,7 +16,7 @@ require('./config/passport');
 
 //-----------------------CONNECTION TO MONGOOSE--------------------------------------------------------
 
-mongoose.connect('mongodb://heroku_5v6c3f26:m7khf0410cgp8jran697663kc6@ds029224.mongolab.com:29224/heroku_5v6c3f26', function(err) {
+mongoose.connect(process.env.MONGOLAB_URI, function(err) {
 	if(err) return console.log("No connection");
 	else{
 		console.log("Success")

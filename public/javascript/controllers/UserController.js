@@ -60,6 +60,14 @@
 			})
 		};
 
+		vm.registerUserCloseModal = function() {
+			$modalInstance.close(vm.user);
+		};
+
+		vm.loginUserCloseModal = function() {
+			$modalInstance.close(vm.user);
+		};
+
 
 
 
