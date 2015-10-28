@@ -19,7 +19,7 @@ require('./config/passport');
 mongoose.connect(process.env.MONGOLAB_URI, function(err) {
 	if(err) return console.log("No connection");
 	else{
-		console.log("Success")
+		console.log("Success thanks Kareem!")
 	}
 });
 

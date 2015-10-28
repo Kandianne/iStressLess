@@ -47,17 +47,26 @@ body {
 
 .introFeatures {
 	padding-top: 8%;
+	font-size: 2em;
 }
 
 .introFeatures input {
-	border: none;
 	border-bottom: solid thin #333;
-	width: 70%;
-	font-size: 1.3em;
+	text-align: center;
+}
+
+md-input-container label {
+	font-size: 1em;
+	line-height: .2em;
+	color: #999;
 }
 
 ::-webkit-input-placeholder {
 	color: #171717;
+}
+
+label {
+	margin: 0px;
 }
 
 #topicsSection {
