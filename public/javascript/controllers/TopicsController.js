@@ -29,7 +29,7 @@
 			vm.getTopics();
 		}
 
-		//---------------------MODALs TO CREATE & EDIT TOPIC-------------------------------
+		//---------------------MODALS TO CREATE & EDIT TOPIC-------------------------------
 		vm.openCreateTopicModal = function(user) {
 			var createTopicModal = $modal.open({
 				templateUrl: 'views/createTopic.html',

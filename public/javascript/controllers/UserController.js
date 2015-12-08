@@ -18,6 +18,8 @@
 			});
 		};	
 
+		
+
 		//---------MODAL TO REGISTER-------------------------------
 		vm.openRegisterModal = function() {
 			var registerModal = $modal.open({

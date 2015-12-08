@@ -50,14 +50,26 @@
 		
 	</div>
 
-	<div class="col-md-6 reliefText">
-		<h2>Stress <span class="coloredWords"><strong>Relieving</strong></span> Videos</h2>
+	<div ng-controller="ReliefMethodsController as rm" class="col-md-6 reliefText">
+		<h2>Search <span class="coloredWords"><strong>Stress Relieving </strong></span>Videos</h2>
 		<br/>
-		<i>Coming Soon...</i>
-		<button class="btn btn-md btn-info" ng-click="vm.getVideos()">Get Videos</button>
+		<select style="color:black;" ng-model="rm.reliefTopics">
+			<option>Relaxation</option>
+			<option>Concentration</option>
+			<option>Meditation</option>
+		</select>
+		<button class="btn btn-md btn-info" ng-click="rm.getVideos()">Get Videos</button>
+
+		<div ng-repeat="v in rm.videos.items">
+			<h1>{{v.snippet.channelTitle}}</h1>
+
+			<iframe width="360" height="115" ng-src="{{v.embedVideos}}" frameborder="0"></iframe>
+		</div>
 
 	</div>
+	
 
 </div>
+
 
 

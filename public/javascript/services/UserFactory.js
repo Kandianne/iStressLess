@@ -23,6 +23,7 @@
 			return localStorage.token;
 		};
 
+
 		function isLoggedIn() {
 			var token = getToken();
 			if(token) {
